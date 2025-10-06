@@ -70,3 +70,15 @@
                         <p><b>Kota:</b> ${data.location.name}</p>
                         <p><b>Suhu:</b> ${data.current.temp_c} °C</p>
                         <p><b>Kelembapan:</b> ${data.current.humidity}%</p>
+ <p><b>Kondisi:</b> ${data.current.condition.text}</p>
+                    `;
+                    $("#tampilan").html(info);
+                },
+                error: function() {
+                    $("#tampilan").html("<p style='color:red;'>Data tidak ditemukan. Coba lokasi lain.</p>");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
