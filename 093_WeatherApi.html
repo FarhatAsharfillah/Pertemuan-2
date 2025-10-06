@@ -60,3 +60,13 @@
 
             const urlapi = "https://api.weatherapi.com/v1/current.json?key=0754b76635e14a8f98511224250610&q=" + kota + "&aqi=no";
             
+ $.ajax({
+                url: urlapi,
+                method: 'GET',
+                success: function(data) {
+                    console.log(data);
+                    const info = `
+                        <p><b>Negara:</b> ${data.location.country}</p>
+                        <p><b>Kota:</b> ${data.location.name}</p>
+                        <p><b>Suhu:</b> ${data.current.temp_c} °C</p>
+                        <p><b>Kelembapan:</b> ${data.current.humidity}%</p>
