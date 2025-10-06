@@ -48,3 +48,15 @@
         <b>Hasil:</b>
         <div id="tampilan"></div>
     </div>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $("#getWeather").click(function() {
+            const kota = $("#lokasiInput").val();
+            if (!kota) {
+                alert("Masukkan nama kota terlebih dahulu!");
+                return;
+            }
+
+            const urlapi = "https://api.weatherapi.com/v1/current.json?key=0754b76635e14a8f98511224250610&q=" + kota + "&aqi=no";
+            
